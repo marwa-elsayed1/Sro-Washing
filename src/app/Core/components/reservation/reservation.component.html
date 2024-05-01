@@ -1,0 +1,164 @@
+<!-- 
+<p-toast
+  [showTransformOptions]="'translateY(100%)'"
+  [showTransitionOptions]="'500ms'"
+  [hideTransitionOptions]="'500ms'"
+  [showTransformOptions]="'translateX(100%)'"
+  [breakpoints]="{
+    '920px': { width: '100%', right: '0', left: '0' },
+  }"
+></p-toast> -->
+
+<!-- <p-stepper [linear]="true">
+  <p-stepperPanel header="Header I">
+    <ng-template
+      pTemplate="content"
+      let-nextCallback="nextCallback"
+      let-index="index"
+    >
+      <div class="flex flex-column h-12rem">
+        <div
+          class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+        >
+          Content I
+        </div>
+      </div>
+      <div class="flex pt-4 justify-content-end">
+        <p-button
+          label="Next"
+          icon="pi pi-arrow-right"
+          iconPos="right"
+          (onClick)="nextCallback.emit()"
+        /></div
+    ></ng-template>
+  </p-stepperPanel>
+  <p-stepperPanel header="Header II">
+    <ng-template
+      pTemplate="content"
+      let-prevCallback="prevCallback"
+      let-nextCallback="nextCallback"
+      let-index="index"
+    >
+      <div class="flex flex-column h-12rem">
+        <div
+          class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+        >
+          Content II
+        </div>
+      </div>
+      <div class="flex pt-4 justify-content-between">
+        <p-button
+          label="Back"
+          icon="pi pi-arrow-left"
+          (onClick)="prevCallback.emit()"
+        />
+        <p-button
+          label="Next"
+          icon="pi pi-arrow-right"
+          iconPos="right"
+          (onClick)="nextCallback.emit()"
+        /></div
+    ></ng-template>
+  </p-stepperPanel>
+  <p-stepperPanel header="Header III">
+    <ng-template
+      pTemplate="content"
+      let-prevCallback="prevCallback"
+      let-index="index"
+    >
+      <div class="flex flex-column h-12rem">
+        <div
+          class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+        >
+          Content III
+        </div>
+      </div>
+      <div class="flex pt-4 justify-content-start">
+        <p-button
+          label="Back"
+          icon="pi pi-arrow-left"
+          (onClick)="prevCallback.emit()"
+        /></div
+    ></ng-template>
+  </p-stepperPanel>
+</p-stepper> -->
+
+<div class="container-fluid reservation">
+  <p-calendar
+    class="max-w-full"
+    [(ngModel)]="date"
+    [inline]="true"
+    [showWeek]="true"
+    (onSelect)="getAvailableTimes(inpTime)"
+  ></p-calendar>
+
+  <div class="invoice">
+    <div class="invoice-content">
+      <div class="invoice-header">
+        <h1>Invoice Checkout Details</h1>
+      </div>
+      <div class="invoice-details">
+        <div class="item">
+          <span>Item:</span>
+          <span>Product Name</span>
+        </div>
+        <div class="item">
+          <span>Price:</span>
+          <span>$100.00</span>
+        </div>
+        <div class="item">
+          <span>Quantity:</span>
+          <span>1</span>
+        </div>
+      </div>
+      <div class="total">Total: $100.00</div>
+    </div>
+    <button class="pay-button">Pay Now</button>
+  </div>
+
+  <div class="hr-example">
+    <input
+      placeholder="Choose time"
+      [ngxTimepicker]="default"
+      readonly
+      #inpTime
+    />
+    <ngx-material-timepicker
+      (timeSet)="getTime($event)"
+      #default
+    ></ngx-material-timepicker>
+  </div>
+</div>
+
+<!-- <div class="reservation-form">
+    <h2>Reserve Your Car Wash</h2>
+    <form (ngSubmit)="submitReservation()" #reservationForm="ngForm">
+      <div class="form-group">
+        <input
+          type="date"
+          id="date"
+          [(ngModel)]="reservation.date"
+          #date="ngModel"
+          [min]="minDate"
+          (change)="getTimes($event)"
+          required
+        />
+      </div>
+      @if(availableTimes.length > 0) {
+      <div class="form-group">
+        <select [(ngModel)]="availableTimes">
+          @for (time of availableTimes; track $index) {
+          <option [value]="time">
+            {{ time }}
+          </option>
+          }
+        </select>
+      </div>
+      }
+      <div class="form-group">
+        <button type="submit" [disabled]="!reservationForm.valid">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div> -->

@@ -1,0 +1,80 @@
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.row_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  background-color: #fff;
+}
+.row_content > div {
+  padding: 30px 5px;
+}
+
+.title {
+  font-weight: bold;
+  padding: 10px 0px;
+  text-align: center;
+}
+.btn {
+  width: 367px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, #ea454c 0%, #ea454c 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.otp-img {
+  width: 235px;
+  height: 301px;
+  background-image: url("../../../../assets/images/otp-verification.svg");
+  background-size: cover; /* Fills the container */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 520px) {
+  .row {
+    width: inherit;
+  }
+  .btn {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .btn {
+    width: 200px;
+  }
+}
+
+.card-body {
+  flex: 0;
+}
+
+.otp-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.otp-inputs input {
+  width: 53px;
+  height: 55px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 21px;
+}

@@ -1,0 +1,174 @@
+
+<p-toast
+  [showTransformOptions]="'translateY(100%)'"
+  [showTransitionOptions]="'500ms'"
+  [hideTransitionOptions]="'500ms'"
+  [showTransformOptions]="'translateX(100%)'"
+  [breakpoints]="{
+    '920px': { width: '100%', right: '0', left: '0' },
+  }"
+></p-toast>
+<div
+  class="container-fluid d-flex align-items-center justify-content-center register-form"
+>
+  <div class="row w-100 d-flex justify-content-between align-items-center">
+    <div class="col-6 form-section">
+      <div class="form-header mb-5">
+        <h1 class="title">Welcome To Srosh</h1>
+        <small>We are pleased to see you here.</small>
+      </div>
+
+      <div class="">
+        <div class="card-body mt-5">
+          <form [formGroup]="registerForm" class="form" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-1">
+              <label for="fullName" class="control-label my-2">Full Name</label>
+              <input
+                id="fullName"
+                type="fullName"
+                formControlName="fullName"
+                class="form-control"
+                placeholder="i.e. Srosh Auto Spa"
+                required
+              />
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                registerForm.controls['fullName']?.invalid &&
+                (registerForm.controls['fullName'].dirty ||
+                  registerForm.controls['fullName'].touched)
+              "
+            >
+              <p
+                *ngIf="registerForm.controls['fullName'].errors!['required']"
+                class="text-danger"
+              >
+                Full Name is required.
+              </p>
+
+              <p
+                *ngIf="registerForm.controls['fullName'].errors!['minlength']"
+                class="text-danger"
+              >
+                Minimum length is 2.
+              </p>
+            </div>
+
+            <div class="form-group mb-1">
+              <label for="phoneNumber" class="control-label my-2"
+                >Phone Number</label
+              >
+              <input
+                id="phoneNumber"
+                type="phoneNumber"
+                formControlName="phoneNumber"
+                class="form-control"
+                placeholder="i.e. +9(123-456-7891)"
+                required
+              />
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                registerForm.controls['phoneNumber']?.invalid &&
+                (registerForm.controls['phoneNumber'].dirty ||
+                  registerForm.controls['phoneNumber'].touched)
+              "
+            >
+              @if (registerForm.controls['phoneNumber'].errors!['required']) {
+
+              <p class="text-danger">Phone number is required.</p>
+              } @if(registerForm.controls['phoneNumber'].errors!['pattern']){
+              <p class="text-danger">Phone number is invalid.</p>
+              }
+            </div>
+
+            <div class="form-group mb-1">
+              <label for="password" class="control-label my-2">Password</label>
+              <input
+                id="password"
+                type="password"
+                formControlName="password"
+                class="form-control"
+                placeholder="*************"
+                required
+              />
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                registerForm.controls['password']?.invalid &&
+                (registerForm.controls['password'].dirty ||
+                  registerForm.controls['password'].touched)
+              "
+            >
+              <p
+                *ngIf="registerForm.controls['password'].errors!['required']"
+                class="text-danger"
+              >
+                Password is required.
+              </p>
+
+              <p
+                *ngIf="registerForm.controls['password'].errors!['minlength']"
+                class="text-danger"
+              >
+                Minimum length is 8.
+              </p>
+            </div>
+
+            <div class="form-group mb-1">
+              <label for="confirmPassword" class="control-label my-2"
+                >Confirm Password</label
+              >
+              <input
+                id="confirmPassword"
+                type="password"
+                formControlName="confirmPassword"
+                class="form-control"
+                placeholder="*************"
+                required
+              />
+            </div>
+            @if ( registerForm.controls['confirmPassword'].invalid &&
+            (registerForm.controls['confirmPassword'].dirty ||
+            registerForm.controls['confirmPassword'].touched) ) {
+            <div class="error">
+              <p class="text-danger">Confirm Password does not match</p>
+            </div>
+            }
+            <div class="form-group mt-3">
+              <button
+                type="submit"
+                [disabled]="registerForm.invalid"
+                [ngClass]="{ disabled: registerForm.invalid }"
+                class="btn"
+              >
+                Sign up
+              </button>
+              <div class="w-100 my-3 end-section">
+                <p class="mb-0">
+                  Have an account?
+                  <a [routerLink]="['/auth/login']" class="text-dark-50 fw-bold"
+                    >Sign In Now!
+                  </a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-50 img-section col-6 text-center">
+      <div>
+        <!-- <img
+          class="w-100"
+          src="assets/images/register_image.svg"
+          alt="register-side"
+        /> -->
+      </div>
+    </div>
+  </div>
+</div>

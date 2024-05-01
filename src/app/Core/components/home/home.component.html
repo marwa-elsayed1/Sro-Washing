@@ -1,0 +1,165 @@
+  <div class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="main-car">
+          <div class="car-background">
+              <div class="left-column">
+                  <h1 style="font-size: 100px;">Keep your <span>car clean</span> always</h1>
+              </div>
+              <div class="right-column">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias harum consequuntur aliquid
+                      nemo ex vel voluptates asperiores unde perspiciatis</p>
+                      <button>
+                        <a href="/reservation">
+                          Book a Wash!
+                        </a></button>
+                    </div>
+          </div>
+          <div class="washed-car">
+              <div class="right-column">
+  
+              </div>
+              <div class="left-column">
+                  <img src="/assets/images/blue-car.png" alt="washed-car">
+              </div>
+          </div>
+      </div>
+    
+      </div>
+    </div>
+  </div>
+ 
+
+ 
+<div class="contact-car-details">
+    <div class="section-container">
+        <div class="details-info">
+              <img src="/assets/images/phone.png" alt="">
+            <div>
+                <h3>Call us now at</h3>
+                <p>+08833656554</p>
+            </div>
+        </div>
+        <div class="tall-line"></div>
+        <div class="details-info">
+           <img src="/assets/images/marker.png" alt="">
+            <div>
+                <h3>Our Location</h3>
+                <p>Canada, Sylhet</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="service">
+  <div class="container">
+    <div class="section-header text-center">
+      <p>What We Do?</p>
+      <h2>Premium Washing Services</h2>
+    </div>
+    <div class="row">
+      <mat-tab-group class="mat-group">
+        <mat-tab *ngFor="let tab of tabs" label="{{ tab.label }}" class="my-custom-label" >
+          <div class="col-lg-12 service-column">
+            <div class="service-content">
+              <div class="service-header">
+                <img src="/assets/images/washer6.png" alt="blue-car-wash">
+                <h1>{{ tab.header[0] }}</h1>
+              </div>
+
+              <ol class="col-lg-12 service-options">
+                <li *ngFor="let item of tab.details">
+                  {{item}}
+                </li>
+              </ol>
+            </div>
+            <div class="service-content">
+              <div class="service-header">
+                <img src="/assets/images/washer.png" alt="blue-car-wash">
+                <h1>{{ tab.header[1] }}</h1>
+              </div>
+              <ol class="col-lg-12 service-options">
+                <li *ngFor="let item of tab.details">
+                  {{item}}
+                </li>
+              </ol>
+            </div>
+            <div class="service-content">
+              <div class="service-header">
+                <img src="/assets/images/washer3.png" alt="blue-car-wash">
+                <h1>{{ tab.header[2] }}</h1>
+              </div>
+              <ol class="col-lg-12 service-options">
+                <li *ngFor="let item of tab.details">
+                  {{item}}
+                </li>
+              </ol>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+
+<div class="experience">
+  <div class="container">
+    <h1><span>Based On</span> Experience</h1>
+    <div class="experience-content">
+          <img src="/assets/images/young-man-washing3.jpg" alt="a-img" class="a-exp">
+          <img src="/assets/images/young-man-washing1.jpg" alt="b-img" class="b-exp">
+          <img src="/assets/images/young-man-washing2.jpg" alt="c-img" class="c-exp">
+          <div class="d-exp">
+            <h2>Our Statistics</h2>
+            <div class="checked-w-option">
+              <img src="/assets/images/check-circle.png" alt="checked">
+              <p>We have more than 10+ years of car service experience</p>
+            </div>
+            <div class="checked-w-option">
+              <img src="/assets/images/check-circle.png" alt="checked">
+              <p>We have more than 1.5K vehicles serviced</p>
+            </div>
+            <button type="button" class="learn-more-btn btn learn-more-btn-custom">Learn More</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+  <div class="price" id="price">
+    <div class="container">
+      <div class="section-header text-center">
+        <p>Washing Plan</p>
+        <h2>Choose Your Plan</h2>
+      </div>
+      <div class="price-slider">
+        <div class="slider-track">
+          <div class="price-item" *ngFor="let plan of plans">
+            <div class="price-header">
+              <h3>{{ plan.title }} Package:-</h3>
+              <div class="specific-car" *ngFor="let car of plan.cars">
+                <h5>{{ car.type }}:</h5>
+                <h2><span>$</span><strong>{{ car.price }}</strong></h2>
+              </div>
+            </div>
+            <div class="price-footer">
+              <a class="btn btn-custom" href="">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <button class="prev-btn" (click)="prevSlide()">&#10094;</button>
+        <button class="next-btn" (click)="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+
+
+ 
+

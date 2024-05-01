@@ -1,0 +1,21 @@
+@if(request){
+<div class="card flex justify-content-center">
+  <p-progressSpinner
+    styleClass="w-4rem h-4rem"
+    strokeWidth="8"
+    fill="var(--surface-ground)"
+    animationDuration=".5s"
+  ></p-progressSpinner>
+</div>
+}@else {
+<div class="main">
+  <header>
+    <app-header></app-header>
+  </header>
+
+  <router-outlet></router-outlet>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>
+}

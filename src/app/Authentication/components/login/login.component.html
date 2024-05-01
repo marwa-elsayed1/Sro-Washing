@@ -1,0 +1,114 @@
+<p-toast
+  [showTransformOptions]="'translateY(100%)'"
+  [showTransitionOptions]="'500ms'"
+  [hideTransitionOptions]="'500ms'"
+  [showTransformOptions]="'translateX(100%)'"
+  [breakpoints]="{
+    '920px': { width: '100%', right: '0', left: '0' },
+  }"
+></p-toast>
+<div
+  class="container-fluid d-flex align-items-center justify-content-center login-form"
+>
+  <div class="row w-100 d-flex justify-content-between align-items-center">
+    <div class="w-50 img-section col-6 text-center">
+      <div></div>
+    </div>
+    <div class="col-6 form-section">
+      <div class="form-header mb-5">
+        <h1 class="title">Welcome To Srosh</h1>
+        <small>We are pleased to see you here.</small>
+      </div>
+
+      <div class="">
+        <div class="card-body mt-5">
+          <form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-1">
+              <label for="phoneNumber" class="control-label my-2"
+                >Phone Number</label
+              >
+              <input
+                id="phoneNumber"
+                type="phoneNumber"
+                formControlName="phoneNumber"
+                class="form-control"
+                placeholder="i.e. +9(123-456-7891)"
+                required
+              />
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                loginForm.controls['phoneNumber']?.invalid &&
+                (loginForm.controls['phoneNumber'].dirty ||
+                  loginForm.controls['phoneNumber'].touched)
+              "
+            >
+              @if (loginForm.controls['phoneNumber'].errors!['required']) {
+
+              <p class="text-danger">Phone number is required.</p>
+              } @if(loginForm.controls['phoneNumber'].errors!['pattern']){
+              <p class="text-danger">Phone number is invalid.</p>
+              }
+            </div>
+
+            <div class="form-group mb-1">
+              <label for="password" class="control-label my-2">Password</label>
+              <input
+                id="password"
+                type="password"
+                formControlName="password"
+                class="form-control"
+                placeholder="*************"
+                required
+              />
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                loginForm.controls['password']?.invalid &&
+                (loginForm.controls['password'].dirty ||
+                  loginForm.controls['password'].touched)
+              "
+            >
+              <p
+                *ngIf="loginForm.controls['password'].errors!['required']"
+                class="text-danger"
+              >
+                Password is required.
+              </p>
+
+              <p
+                *ngIf="loginForm.controls['password'].errors!['minlength']"
+                class="text-danger"
+              >
+                Minimum length is 8.
+              </p>
+            </div>
+
+            <div class="form-group mt-3">
+              <button
+                type="submit"
+                [disabled]="loginForm.invalid"
+                [ngClass]="{ disabled: loginForm.invalid }"
+                class="btn"
+              >
+                Login
+              </button>
+              <div class="w-100 my-3 end-section">
+                <p class="mb-0">
+                  Don't have an account?
+                  <a
+                    [routerLink]="['/auth/register']"
+                    class="text-dark-50 fw-bold"
+                    >Register Now!
+                  </a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

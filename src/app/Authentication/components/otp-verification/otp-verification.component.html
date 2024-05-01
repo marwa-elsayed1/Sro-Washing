@@ -1,0 +1,49 @@
+<p-toast
+  [showTransformOptions]="'translateY(100%)'"
+  [showTransitionOptions]="'500ms'"
+  [hideTransitionOptions]="'500ms'"
+  [showTransformOptions]="'translateX(100%)'"
+  [breakpoints]="{
+    '920px': { width: '100%', right: '0', left: '0' },
+  }"
+></p-toast>
+
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 row_content">
+      <div class="otp-img">
+        <div></div>
+      </div>
+
+      <div class="card-body">
+        <div class="form-header">
+          <h1 class="title">OTP Verification</h1>
+          <small
+            >We have sent the verification code to your email address.</small
+          >
+        </div>
+        <form [formGroup]="otpForm" class="form" (ngSubmit)="onSubmit()">
+          <div class="otp-inputs">
+            <input type="text" maxlength="1" formControlName="otpOne" />
+            <input type="text" maxlength="1" formControlName="otpTwo" />
+            <input type="text" maxlength="1" formControlName="otpThree" />
+            <input type="text" maxlength="1" formControlName="otpFour" />
+            <input type="text" maxlength="1" formControlName="otpFive" />
+            <input type="text" maxlength="1" formControlName="otpSix" />
+          </div>
+
+          <div class="form-group mt-3">
+            <button
+              type="submit"
+              [disabled]="otpForm.invalid"
+              [ngClass]="{ disabled: otpForm.invalid }"
+              class="btn"
+            >
+              Continue
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

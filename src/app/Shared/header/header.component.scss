@@ -1,0 +1,178 @@
+/**********************************/
+/********** Top Bar CSS ***********/
+/**********************************/
+.top-bar {
+  position: relative;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+}
+
+.logo {
+  width: 100px;
+}
+.top-bar .logo {
+  text-align: left;
+  overflow: hidden;
+}
+
+.top-bar .logo h1 {
+  margin: -4px 0 0 0;
+  color: #e81c2e;
+  font-size: 33px;
+  line-height: 50px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.top-bar .logo h1 span {
+  color: #202c45;
+}
+
+.top-bar .logo img {
+  max-width: 100%;
+  max-height: 60px;
+}
+
+.top-bar .top-bar-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.top-bar .top-bar-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #202c45;
+  border-radius: 40px;
+}
+
+.top-bar .top-bar-icon i {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.top-bar .top-bar-text {
+  padding-left: 15px;
+}
+
+.top-bar .top-bar-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.top-bar .top-bar-text p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media (max-width: 991.98px) {
+  .top-bar .logo {
+    text-align: center;
+  }
+}
+
+/**********************************/
+/*********** Nav Bar CSS **********/
+/**********************************/
+.nav-bar {
+  position: relative;
+  background-color: white;
+  // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.nav-bar.nav-sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.nav-bar .navbar {
+  // padding: 20px 0;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.nav-bar.nav-sticky .navbar {
+  padding: 5px 0;
+}
+
+.active {
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbar-nav {
+  column-gap: 30px;
+}
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #ffffff;
+  padding: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #e81c2e;
+}
+
+.nav-bar .dropdown-menu {
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  background: #f8f9fa;
+}
+
+.nav-bar .btn.btn-custom {
+  color: #202c45;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 0 #e81c2e;
+}
+
+.nav-bar .btn:hover {
+  color: #ffffff;
+  background: #e81c2e;
+  box-shadow: inset 200px 0 0 0 #e81c2e;
+}
+
+
+@media (min-width: 992px) {
+  .nav-bar .navbar-brand {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-dark .navbar-nav .nav-link,
+  .navbar-dark .navbar-nav .nav-link:focus,
+  .navbar-dark .navbar-nav .nav-link:hover,
+  .navbar-dark .navbar-nav .nav-link.active {
+    padding: 5px 0;
+  }
+
+  .nav-bar .dropdown-menu {
+    box-shadow: none;
+  }
+
+  .nav-bar .btn {
+    display: none;
+  }
+}
